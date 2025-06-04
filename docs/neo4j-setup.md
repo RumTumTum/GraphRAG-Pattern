@@ -57,11 +57,19 @@ driver.close()
 
 ### Environment Variables
 
-Copy `.env.example` to `.env` and customize:
+Copy `.env.example` to `.env` and customize if needed:
 
 ```bash
 cp .env.example .env
+# Edit settings if needed: nano .env
 ```
+
+Available configuration options:
+- `NEO4J_PASSWORD`: Database password (default: graphrag123)
+- `NEO4J_HTTP_PORT`: Browser port (default: 7474)
+- `NEO4J_BOLT_PORT`: Database connection port (default: 7687)
+- `NEO4J_HEAP_MAX`: Maximum heap memory (default: 1G)
+- `CHROMA_PORT`: Vector DB port (default: 8001)
 
 ### Memory Configuration
 

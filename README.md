@@ -164,6 +164,12 @@ ollama pull llama3.2  # or your preferred model
 ### Neo4j Database Setup
 
 ```bash
+# Copy environment configuration (optional - defaults work for development)
+cp .env.example .env
+
+# Customize settings in .env if needed (passwords, ports, memory)
+# nano .env
+
 # Start Neo4j and Chroma with Docker Compose
 docker-compose up -d
 
