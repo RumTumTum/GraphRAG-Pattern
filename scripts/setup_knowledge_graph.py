@@ -9,6 +9,10 @@ import sys
 from pathlib import Path
 from neo4j import GraphDatabase
 import logging
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)

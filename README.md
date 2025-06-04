@@ -27,12 +27,12 @@ To do this, must:
 
 
 ### 🔧 Next up   
- - Graph queryable
-   - Neo4J docker and instructions
-   - build ontology using cypher (temporary)
-   - Populate KG using cyper (temporary)
-   - Script to show graph outputs
-   - Instructions to view via CLI and Neo4J
+ - ✅ Graph queryable (COMPLETED)
+   - ✅ Neo4J docker and instructions
+   - ✅ build ontology using cypher (temporary)
+   - ✅ Populate KG using cypher (temporary)
+   - ✅ Script to show graph outputs
+   - ✅ Instructions to view via CLI and Neo4J
  - RAG using MCP 
    - GraphDB MCP Server
    - Query graph and use context for LLM
@@ -182,6 +182,21 @@ curl http://localhost:7474
 - Bolt Protocol: bolt://localhost:7687
 
 For detailed Neo4j setup and troubleshooting, see [docs/neo4j-setup.md](docs/neo4j-setup.md).
+
+### Knowledge Graph Setup
+
+```bash
+# Install graph setup dependencies
+pip install -r scripts/requirements.txt
+
+# Create sample academic research knowledge graph
+python scripts/setup_knowledge_graph.py
+
+# Run GraphRAG demonstration queries
+python scripts/query_graph.py
+```
+
+For detailed graph setup and querying instructions, see [docs/graph-quickstart.md](docs/graph-quickstart.md).
 
 ### Quick Start
 
@@ -345,6 +360,11 @@ MIT License - see LICENSE file for details
   - Multi-turn chat conversations
   - Model management and health monitoring
   - FastAPI-based REST endpoints
+- [x] **Knowledge Graph Infrastructure**: Academic research demonstration graph
+  - Neo4j Docker setup with environment configuration
+  - Sample ontology and data (papers, authors, institutions, topics)
+  - GraphRAG query demonstrations
+  - Documentation for setup and querying
 
 ### 🚧 In Development
 - [ ] **GraphDB MCP Server**: Neo4j/ArangoDB integration
@@ -355,8 +375,12 @@ MIT License - see LICENSE file for details
 ## Roadmap
 
 - [x] **Phase 1a**: Generation Server with Ollama integration ✅
-- [ ] **Phase 1b**: Core MCP servers and basic retrieval
-- [ ] **Phase 2**: Advanced ontology management
-- [ ] **Phase 3**: Multi-modal ingestion support
-- [ ] **Phase 4**: Performance optimization and scaling
-- [ ] **Phase 5**: Web interface and visualization tools
+- [x] **Phase 1b-1**: Knowledge Graph Infrastructure ✅
+  - Neo4j setup, sample data, query demonstrations
+- [ ] **Phase 1b-2**: Core MCP servers and basic retrieval
+  - GraphDB MCP Server, Vector DB MCP Server
+- [ ] **Phase 2**: GraphRAG vs RAG evaluation system
+- [ ] **Phase 3**: Advanced ontology management
+- [ ] **Phase 4**: Multi-modal ingestion support
+- [ ] **Phase 5**: Performance optimization and scaling
+- [ ] **Phase 6**: Web interface and visualization tools
