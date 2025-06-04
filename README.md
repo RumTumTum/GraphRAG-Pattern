@@ -13,6 +13,30 @@ This project implements a multi-component GraphRAG system with the following cor
 
 ## Features
 
+### 🔧 Core functionality
+What's the reason I'm doing this?
+To show that GraphRAG is more effective than RAG for certain retrieval tasks
+To do this, must:
+- Run GraphRAG
+- Run RAG
+- Compare side-by-side (CLI OK to start)
+- Later can also do a front-end comparison
+- Really cool if could do a dagger build of all the components
+
+### 🔧 Next up   
+ - Graph queryable
+   - Neo4J docker and instructions
+   - build ontology using cypher (temporary)
+   - Populate KG using cyper (temporary)
+   - Script to show graph outputs
+   - Instructions to view via CLI and Neo4J
+ - RAG using MCP 
+   - GraphDB MCP Server
+   - Query graph and use context for LLM
+ Later features
+ - Dagger run
+ - Ontology-builder (e.g., pythonic way of building ontolgoy)
+
 ### 🔧 Core Components
 
 - [ ] **Ontology Builder**
