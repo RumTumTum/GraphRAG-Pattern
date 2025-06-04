@@ -25,11 +25,6 @@ To do this, must:
 
 ### Next Steps
 
-1. **Build Ontology**: Create domain-specific schemas using Cypher
-2. **Populate Graph**: Import your data using Cypher scripts
-3. **Query Examples**: Explore the graph with sample queries
-4. **MCP Integration**: Connect via GraphDB MCP Server
-
 
 ### 🔧 Next up   
  - Graph queryable
@@ -41,6 +36,10 @@ To do this, must:
  - RAG using MCP 
    - GraphDB MCP Server
    - Query graph and use context for LLM
+ - Build eval - use RAGAS to evaluate RAG outcomes
+ - Add traditional non-RAG vectorDB and embedding
+
+
  Later features
  - Dagger run
  - Ontology-builder (e.g., pythonic way of building ontologies)
