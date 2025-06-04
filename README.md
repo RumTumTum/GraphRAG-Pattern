@@ -23,6 +23,14 @@ To do this, must:
 - Later can also do a front-end comparison
 - Really cool if could do a dagger build of all the components
 
+### Next Steps
+
+1. **Build Ontology**: Create domain-specific schemas using Cypher
+2. **Populate Graph**: Import your data using Cypher scripts
+3. **Query Examples**: Explore the graph with sample queries
+4. **MCP Integration**: Connect via GraphDB MCP Server
+
+
 ### 🔧 Next up   
  - Graph queryable
    - Neo4J docker and instructions
@@ -35,7 +43,13 @@ To do this, must:
    - Query graph and use context for LLM
  Later features
  - Dagger run
- - Ontology-builder (e.g., pythonic way of building ontolgoy)
+ - Ontology-builder (e.g., pythonic way of building ontologies)
+ - Examples
+   - Create domain-specific schemas using Cypher
+   - Populate Graph with sample data using Cypher scripts
+   - Query Examples: Explore the graph with sample queries
+
+
 
 ### 🔧 Core Components
 
@@ -146,6 +160,23 @@ docker-compose up -d
 # Initialize Ollama models
 ollama pull llama3.2  # or your preferred model
 ```
+
+### Neo4j Database Setup
+
+```bash
+# Start Neo4j and Chroma with Docker Compose
+docker-compose up -d
+
+# Verify Neo4j is running (should return JSON response)
+curl http://localhost:7474
+```
+
+**Access Neo4j:**
+- Neo4j Browser: http://localhost:7474 
+- Username: `neo4j`, Password: `graphrag123`
+- Bolt Protocol: bolt://localhost:7687
+
+For detailed Neo4j setup and troubleshooting, see [docs/neo4j-setup.md](docs/neo4j-setup.md).
 
 ### Quick Start
 
