@@ -196,7 +196,8 @@ python scripts/setup_knowledge_graph.py
 python scripts/query_graph.py
 ```
 
-For detailed graph setup and querying instructions, see [docs/graph-quickstart.md](docs/graph-quickstart.md).
+For learning Cypher and exploring the graph, see [docs/graph-quickstart.md](docs/graph-quickstart.md).
+For data management and cleanup, see [docs/graph-management.md](docs/graph-management.md).
 
 ### Quick Start
 
