@@ -1,0 +1,7 @@
+# claude init
+CLAUDE.md
+# env
+.env
+# Venv
+./venv/*
+venv/

@@ -1,0 +1,58 @@
+services:
+  neo4j:
+    image: neo4j:5.15-community
+    container_name: graphrag-neo4j
+    restart: unless-stopped
+    ports:
+      - "${NEO4J_HTTP_PORT:-7474}:7474"  # HTTP
+      - "${NEO4J_BOLT_PORT:-7687}:7687"  # Bolt
+    environment:
+      # Authentication
+      NEO4J_AUTH: ${NEO4J_USER:-neo4j}/${NEO4J_PASSWORD:-graphrag123}
+      
+      # Database settings
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*
+      NEO4J_dbms_security_procedures_allowlist: apoc.*
+      
+      # Memory settings
+      NEO4J_dbms_memory_heap_initial__size: ${NEO4J_HEAP_INITIAL:-512M}
+      NEO4J_dbms_memory_heap_max__size: ${NEO4J_HEAP_MAX:-1G}
+      NEO4J_dbms_memory_pagecache_size: ${NEO4J_PAGECACHE:-512M}
+      
+      # Performance settings
+      NEO4J_dbms_jvm_additional: "-XX:+UseG1GC"
+      
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/var/lib/neo4j/import
+      - neo4j_plugins:/plugins
+    networks:
+      - graphrag-network
+
+  # Vector DB (Chroma) - for future use
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: graphrag-chroma
+    restart: unless-stopped
+    ports:
+      - "${CHROMA_PORT:-8001}:8000"
+    environment:
+      CHROMA_SERVER_HOST: ${CHROMA_HOST:-0.0.0.0}
+      CHROMA_SERVER_HTTP_PORT: 8000
+    volumes:
+      - chroma_data:/chroma/chroma
+    networks:
+      - graphrag-network
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_import:
+  neo4j_plugins:
+  chroma_data:
+
+networks:
+  graphrag-network:
+    driver: bridge
